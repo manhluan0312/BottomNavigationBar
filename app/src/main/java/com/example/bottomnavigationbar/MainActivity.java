@@ -2,6 +2,9 @@ package com.example.bottomnavigationbar;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentActivity;
+import androidx.viewpager2.adapter.FragmentStateAdapter;
+import androidx.viewpager2.widget.ViewPager2;
 
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -12,29 +15,69 @@ import com.google.android.material.navigation.NavigationBarView;
 
 public class MainActivity extends AppCompatActivity {
 
+    private BottomNavigationView bottomNavigationView;
+    private ViewPager2 viewPager;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_nav);
+        bottomNavigationView = findViewById(R.id.bottom_nav);
+        viewPager = findViewById(R.id.viewpapar);
+
+        setUpViewPapger();
+
         bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                switch (item.getItemId())
-                {
+                switch (item.getItemId()) {
                     case R.id.action_home:
-                        Toast.makeText(getApplicationContext(),"Home",Toast.LENGTH_SHORT).show();
+                        viewPager.setCurrentItem(0);
                         break;
                     case R.id.action_sanpham:
-                        Toast.makeText(getApplicationContext(),"Sản phẩm",Toast.LENGTH_SHORT).show();
+                        viewPager.setCurrentItem(1);
                         break;
                     case R.id.action_user:
-                        Toast.makeText(getApplicationContext(),"Tài khoản",Toast.LENGTH_SHORT).show();
+                        viewPager.setCurrentItem(2);
                         break;
                 }
                 return true;
             }
         });
+    }
+
+    private void setUpViewPapger() {
+        ViewPagerAdapter viewPagerAdapter = new ViewPagerAdapter(this);
+        viewPager.setAdapter(viewPagerAdapter);
+
+
+        viewPager.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
+            }
+
+            @Override
+            public void onPageSelected(int position) {
+                switch (position)
+                {
+                    case 0:
+                        bottomNavigationView.getMenu().findItem(R.id.action_home).setChecked(true);
+                        break;
+
+                    case 1:
+                        bottomNavigationView.getMenu().findItem(R.id.action_sanpham).setChecked(true);
+                        break;
+
+                    case 2:
+                        bottomNavigationView.getMenu().findItem(R.id.action_user).setChecked(true);
+                        break;
+
+                }
+            }
+        });
+
+
     }
 }
