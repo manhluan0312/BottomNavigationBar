@@ -17,16 +17,16 @@ public class MainActivity extends AppCompatActivity {
 
     private BottomNavigationView bottomNavigationView;
     private ViewPager2 viewPager;
+    private long onBackPressedTime;
+    private Toast mToast;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        bottomNavigationView = findViewById(R.id.bottom_nav);
-        viewPager = findViewById(R.id.viewpapar);
-
-        setUpViewPapger();
+             AnhXa();
+             setUpViewPapger();
 
         bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
             @Override
@@ -45,6 +45,12 @@ public class MainActivity extends AppCompatActivity {
                 return true;
             }
         });
+    }
+
+    private void AnhXa()
+    {
+        bottomNavigationView = findViewById(R.id.bottom_nav);
+        viewPager = findViewById(R.id.viewpapar);
     }
 
     private void setUpViewPapger() {
@@ -73,11 +79,8 @@ public class MainActivity extends AppCompatActivity {
                     case 2:
                         bottomNavigationView.getMenu().findItem(R.id.action_user).setChecked(true);
                         break;
-
                 }
             }
         });
-
-
     }
 }

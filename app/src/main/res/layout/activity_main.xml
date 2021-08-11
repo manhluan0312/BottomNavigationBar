@@ -19,7 +19,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         app:menu="@menu/menu_bottom_nav"
-        app:itemBackground="@color/cardview_dark_background"
+        app:itemBackground="@color/white"
         app:itemIconTint="@color/doimau_item"
         app:itemTextColor="@color/doimau_item"
         />
