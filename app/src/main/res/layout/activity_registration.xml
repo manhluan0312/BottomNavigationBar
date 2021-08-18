@@ -11,18 +11,18 @@
     android:gravity="center"
     tools:context=".RegistrationActivity">
 
-<com.google.android.material.textfield.TextInputLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content">
-    <EditText
-        android:id="@+id/edt_name"
-        android:inputType="textPersonName"
-        android:textColor="@color/black"
-        android:hint="Nhập tên người dùng ..."
+    <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-    </EditText>
-</com.google.android.material.textfield.TextInputLayout>
+        <EditText
+            android:id="@+id/edt_name"
+            android:inputType="textPersonName"
+            android:textColor="@color/black"
+            android:hint="Nhập tên người dùng ..."
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        </EditText>
+    </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
@@ -54,10 +54,10 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
-        android:backgroundTint="#FF5722"
+        android:background="@drawable/custumbutton_regi"
         android:id="@+id/btn_register"
         android:textColor="@color/white"
-        android:text="ĐĂNG NHẬP"
+        android:text="ĐĂNG KÝ"
         android:layout_marginTop="30dp"
         android:layout_width="match_parent"
         android:layout_height="55dp"/>

@@ -44,20 +44,20 @@
         </EditText>
     </com.google.android.material.textfield.TextInputLayout>
 
-  <CheckBox
-      android:id="@+id/nhomatkhau"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:text="Nhớ mật khẩu"
-      android:layout_marginTop="15dp"
-      android:layout_marginStart="15dp"
-      android:layout_gravity="left"
-      />
+    <CheckBox
+        android:id="@+id/nhomatkhau"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nhớ mật khẩu"
+        android:layout_marginTop="15dp"
+        android:layout_marginStart="15dp"
+        android:layout_gravity="center_vertical"
+        />
     <Button
-        android:backgroundTint="#FF5722"
         android:id="@+id/btn_dangnhap"
         android:textColor="@color/white"
         android:text="ĐĂNG NHẬP"
+        android:background="@drawable/custumbutton_login"
         android:layout_marginTop="15dp"
         android:layout_width="match_parent"
         android:layout_height="55dp"/>
