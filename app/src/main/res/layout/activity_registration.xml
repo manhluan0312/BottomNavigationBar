@@ -18,6 +18,8 @@
             android:id="@+id/edt_name"
             android:inputType="textPersonName"
             android:textColor="@color/black"
+            android:drawableStart="@drawable/ic_baseline_user"
+            android:drawablePadding="15dp"
             android:hint="Nhập tên người dùng ..."
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
@@ -33,6 +35,8 @@
             android:inputType="textEmailAddress"
             android:textColor="@color/black"
             android:hint="Nhập tên email ..."
+            android:drawableStart="@drawable/ic_mail"
+            android:drawablePadding="15dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
         </EditText>
@@ -47,6 +51,8 @@
             android:id="@+id/edt_pass"
             android:inputType="textPassword"
             android:textColor="@color/black"
+            android:drawableStart="@drawable/ic_pass"
+            android:drawablePadding="15dp"
             android:hint="Nhập password..."
             android:layout_width="match_parent"
             android:layout_height="wrap_content">

@@ -1,9 +1,11 @@
 package com.example.bottomnavigationbar;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -26,6 +28,7 @@ import org.json.JSONObject;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Set;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -35,11 +38,18 @@ public class LoginActivity extends AppCompatActivity {
     private CheckBox cb_nhomatkhau;
     private ProgressDialog progressDialog;
 
+    SharedPreferences sharedPreferences;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-         AnhXa();
+
+        sharedPreferences =getSharedPreferences("datalogin",MODE_PRIVATE);
+        AnhXa();
+        //lay gia tri sharepre
+        edit_email.setText(sharedPreferences.getString("taikhoan",""));
+        edit_pass.setText(sharedPreferences.getString("matkhau",""));
+        cb_nhomatkhau.setChecked(sharedPreferences.getBoolean("check",false));
          ChuyenManhinhDangKi();
          btn_login.setOnClickListener(new View.OnClickListener() {
              @Override
@@ -72,6 +82,7 @@ public class LoginActivity extends AppCompatActivity {
     {
         progressDialog =new ProgressDialog(this);
         progressDialog.setMessage("Vui lòng chờ...");
+
         final String email=edit_email.getText().toString().trim();
         final String pass=edit_pass.getText().toString().trim();
 
@@ -92,6 +103,21 @@ public class LoginActivity extends AppCompatActivity {
                         if(suscess.equals("1")){
                             progressDialog.dismiss();
                             Toast.makeText(getApplicationContext(),"Đăng nhập thành công",Toast.LENGTH_SHORT).show();
+                            //kiem tra nguoi dung an nut nho tt tin dang nhap
+                            if(cb_nhomatkhau.isChecked()){
+                                SharedPreferences.Editor editor =sharedPreferences.edit();
+                                editor.putString("taikhoan",email);
+                                editor.putString("matkhau",pass);
+                                editor.putBoolean("check",true);
+                                editor.commit();
+                            } else
+                            {
+                                SharedPreferences.Editor editor =sharedPreferences.edit();
+                                editor.putString("taikhoan","");
+                                editor.putString("matkhau","");
+                                editor.putBoolean("check",false);
+                                editor.commit();
+                            }
                             Intent intent =new Intent(LoginActivity.this,MainActivity.class);
                             startActivity(intent);
                             finish();
@@ -127,5 +153,4 @@ public class LoginActivity extends AppCompatActivity {
 
         }
         }
-
 }
