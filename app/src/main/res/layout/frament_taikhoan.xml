@@ -2,13 +2,63 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:orientation="vertical"
-    android:background="#F44336"
-    android:gravity="center"
+    android:background="#2196F3"
+    android:weightSum="6"
     android:layout_height="match_parent">
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Tài khoản"
-        android:textSize="30sp"
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="30dp"
+        android:background="@color/white"
+        android:text="Thông tin tài khoản "
+        android:layout_weight="1"
+        android:textColor="#FF5722"
+        />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@color/white"
+        android:layout_marginTop="30dp"
+        android:text="Hello word"
+        android:layout_weight="1"
+        android:textColor="#FF5722"
+        />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="30dp"
+        android:background="@color/white"
+        android:text="Hello word"
+        android:layout_weight="1"
+        android:textColor="#FF5722"
+        />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="30dp"
+        android:background="@color/white"
+        android:text="Hello word"
+        android:layout_weight="1"
+        android:textColor="#FF5722"
+        />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="30dp"
+        android:background="@color/white"
+        android:text="Hello word"
+        android:layout_weight="1"
+        android:textColor="#FF5722"
+        />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="30dp"
+        android:background="@color/white"
+        android:text="Hello word"
+        android:layout_weight="1"
+        android:layout_marginBottom="30dp"
+        android:textColor="#FF5722"
         />
 </LinearLayout>

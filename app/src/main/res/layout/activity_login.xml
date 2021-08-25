@@ -16,38 +16,31 @@
         android:src="@drawable/ic_launcher_background"
         />
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:layout_width="match_parent"
-        android:layout_marginTop="30dp"
-        android:layout_height="wrap_content">
-
         <EditText
             android:id="@+id/edt_loginemail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
             android:drawableStart="@drawable/ic_mail"
             android:drawablePadding="15dp"
+            android:background="@drawable/custum_edittext"
             android:hint="Nhập tên email ..."
             android:inputType="textPersonName"
             android:textColor="@color/black"></EditText>
-    </com.google.android.material.textfield.TextInputLayout>
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        app:passwordToggleEnabled="true">
+
         <EditText
             android:id="@+id/edt_loginpass"
             android:inputType="textPassword"
             android:drawableStart="@drawable/ic_pass"
             android:drawablePadding="15dp"
+            android:background="@drawable/custum_edittext"
             android:textColor="@color/black"
+            android:layout_marginTop="30dp"
             android:hint="Nhập mật khẩu ..."
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
         </EditText>
-    </com.google.android.material.textfield.TextInputLayout>
 
     <CheckBox
         android:id="@+id/nhomatkhau"
