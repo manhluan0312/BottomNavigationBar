@@ -1,4 +1,4 @@
-package com.example.bottomnavigationbar;
+package com.example.bottomnavigationbar.Adapter;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;

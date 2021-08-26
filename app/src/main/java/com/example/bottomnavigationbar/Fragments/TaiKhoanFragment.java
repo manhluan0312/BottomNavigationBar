@@ -10,7 +10,11 @@ import androidx.fragment.app.Fragment;
 
 import com.example.bottomnavigationbar.R;
 
+
+
 public class TaiKhoanFragment extends Fragment {
+
+
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view =inflater.inflate(R.layout.frament_taikhoan,container,false);
