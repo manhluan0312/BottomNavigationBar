@@ -1,12 +1,11 @@
 package com.example.bottomnavigationbar;
 
+import android.os.Bundle;
+import android.view.MenuItem;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager2.widget.ViewPager2;
-
-import android.os.Bundle;
-import android.view.MenuItem;
-import android.widget.Toast;
 
 import com.example.bottomnavigationbar.Adapter.ViewPagerAdapter;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -16,8 +15,8 @@ public class MainActivity extends AppCompatActivity {
 
     private BottomNavigationView bottomNavigationView;
     private ViewPager2 viewPager;
-    private long onBackPressedTime;
-    private Toast mToast;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,8 +36,11 @@ public class MainActivity extends AppCompatActivity {
                     case R.id.action_sanpham:
                         viewPager.setCurrentItem(1);
                         break;
-                    case R.id.action_user:
+                    case R.id.action_doanhmucsanpham:
                         viewPager.setCurrentItem(2);
+                        break;
+                    case R.id.action_user:
+                        viewPager.setCurrentItem(3);
                         break;
                 }
                 return true;
@@ -75,7 +77,12 @@ public class MainActivity extends AppCompatActivity {
                         bottomNavigationView.getMenu().findItem(R.id.action_sanpham).setChecked(true);
                         break;
 
+
                     case 2:
+                        bottomNavigationView.getMenu().findItem(R.id.action_doanhmucsanpham).setChecked(true);
+                        break;
+
+                    case 3:
                         bottomNavigationView.getMenu().findItem(R.id.action_user).setChecked(true);
                         break;
                 }

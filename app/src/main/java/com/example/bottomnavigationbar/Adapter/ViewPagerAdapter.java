@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 
+import com.example.bottomnavigationbar.Fragments.DanhMucSanPhamFragment;
 import com.example.bottomnavigationbar.Fragments.HomeFragments;
 import com.example.bottomnavigationbar.Fragments.SanPhamFragments;
 import com.example.bottomnavigationbar.Fragments.TaiKhoanFragment;
@@ -28,6 +29,9 @@ public class ViewPagerAdapter extends FragmentStateAdapter {
 
 
                case 2:
+                   return new DanhMucSanPhamFragment();
+
+               case 3:
                    return new TaiKhoanFragment();
 
 
@@ -40,6 +44,6 @@ public class ViewPagerAdapter extends FragmentStateAdapter {
 
     @Override
     public int getItemCount() {
-        return 3;
+        return 4;
     }
 }

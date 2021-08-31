@@ -8,6 +8,10 @@
         android:title="Sản phẩm "
         android:icon="@mipmap/user"
         />
+    <item android:id="@+id/action_doanhmucsanpham"
+        android:title="Sản phẩm "
+        android:icon="@mipmap/user"
+        />
     <item android:id="@+id/action_user"
         android:title="Tài khoản"
         android:icon="@mipmap/user"

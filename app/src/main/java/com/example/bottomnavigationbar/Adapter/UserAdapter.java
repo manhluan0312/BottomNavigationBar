@@ -14,8 +14,8 @@ import com.example.bottomnavigationbar.R;
 
 import java.util.List;
 
-public class UserAdapter extends RecyclerView.Adapter<UserAdapter.UserViewHolder>
-{
+public class UserAdapter extends RecyclerView.Adapter<UserAdapter.UserViewHolder> {
+
     private Context context;
     private List<User> userList;
 
@@ -23,36 +23,32 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.UserViewHolder
         this.context = context;
     }
 
-    public void SetData(List<User> list)
-    {
-        this.userList=list;
+    public void SetData(List<User> list) {
+        this.userList = list;
         notifyDataSetChanged();
     }
 
 
-
     @Override
-    public UserViewHolder onCreateViewHolder(ViewGroup parent, int viewType)
-    {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_user,parent,false);
+    public UserViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_user, parent, false);
         return new UserViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(UserAdapter.UserViewHolder holder, int position)
-    {
-        User user =userList.get(position);
-        if(user==null){
+    public void onBindViewHolder(UserAdapter.UserViewHolder holder, int position) {
+        User user = userList.get(position);
+        if (user == null) {
             return;
         }
         holder.img.setImageResource(user.getRe_image());
         holder.tv_ten.setText(user.getName());
+
     }
 
     @Override
     public int getItemCount() {
-        if(userList!=null)
-        {
+        if (userList != null) {
             return userList.size();
         }
         return 0;
